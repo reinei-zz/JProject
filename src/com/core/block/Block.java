@@ -5,15 +5,31 @@ public class Block {
 	public static final Block[] blocks = new Block[4096];
 	
 	int blockID;
-	String textureName;		// Filename without path and file extension
-	String displayName;		// Text for tooltip
-	boolean isCuttingEdge;	// Does it have smooth Edges or is it a Block
-	boolean isSolid;		// Is it like Air? (Doors, Torches)
+	
+	/**
+	 * Filename without path and file extension
+	 */
+	String textureName;	
+	
+	/**
+	 * Text for the tooltip
+	 */
+	String displayName;	
+	
+	/**
+	 * Does it have smooth Edges or is it a Block
+	 */
+	boolean isCuttingEdge;
+	
+	/**
+	 *  Is it like Air? (Doors, Torches)
+	 */
+	boolean isSolid;
 	
 	/**
 	 * TODO write description
-	 * @param i
-	 * @return false
+	 * @param Block ID
+	 * @return null
 	 */
 	public Block(int i) {
 		if (blocks[i] != null){
@@ -31,7 +47,7 @@ public class Block {
 	/**
 	 * The Path and Name of the .png File
 	 * @param The Block
-	 * @return /Textures/block.textureName.png
+	 * @return Path to the TextureFile
 	 */
 	String getTextureFile(Block block) {
 		return "/Textures/"+block.textureName+".png";
@@ -40,13 +56,13 @@ public class Block {
 	/**
 	 * The Path and Name of the .png File
 	 * @param The Block ID
-	 * @return
+	 * @return Path to the TextureFile
 	 */
 	String getTextureFile(int ID) {
 		return "/Textures/"+blocks[ID].textureName+".png";
 	}
 	
-	public Block setName(String Name){
+	public Block setDisplayName(String Name){
 		displayName = Name;
 		return this;
 	}
@@ -65,7 +81,7 @@ public class Block {
 	 * Work In Progress
 	 */
 	
-/*	void onBlockPlacedbyPlayer(int x, int y, World world, Entity player) { }  //TODO int z und method call
+/*	void onBlockPlacedbyPlayer(int x, int y, World world, Player player) { }  //TODO int z und method call
 	void onBlockPlacedbyMachine(int x, int y, World world, Block placer) { }
 	
 	void onNeighborBlockChange(int x, int y, World world){ } //TODO method call	

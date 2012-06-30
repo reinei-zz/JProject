@@ -9,18 +9,18 @@ public class World {
 	public Block[][] World = new Block[10][10];
 	
 	/**
-	 * Add description
+	 * Returns the Block at the given Position
 	 * 
 	 * @param x
 	 * @param y
-	 * @return
+	 * @return Block block
 	 */
 	Block getBlockInWorld(int x, int y) { 
 		return World[x][y];
 	}
 	
 	/**
-	 * Add description
+	 * Sets the Block at the given Position
 	 * 
 	 * @param x
 	 * @param y
@@ -31,7 +31,7 @@ public class World {
 	}
 	
 	/**
-	 * Add description
+	 * Development initializer
 	 */
 	void initializeTheWorld() {
 		for (int r=0; r<World.length; r++) {
